@@ -31,21 +31,39 @@ namespace cis237assignment3
 
         public override string ToString()
         {
-            return base.ToString();
+            string description = " Extra features: ";
+
+            if(_hasToolbox)
+                description += "Toolbox, ";
+
+            if(_hasComputerConnection)
+                description += "Computer Connection, ";
+
+            if(_hasArm)
+                description += "Arm, ";
+
+            return base.ToString() + description;
         }
 
         public override void CalculateTotalCost()
         {
-            this._totalCost = base.TotalCost;
+            base.CalculateTotalCost();
+            this.TotalCost = base.TotalCost;
 
             if (_hasToolbox)
+            {
                 this.TotalCost += 100;
+            }
 
             if (_hasComputerConnection)
+            {
                 this.TotalCost += 500;
+            }
 
             if (_hasArm)
+            {
                 this.TotalCost += 250;
+            }
         }
     }
 }

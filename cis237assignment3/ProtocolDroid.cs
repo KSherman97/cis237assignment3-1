@@ -32,7 +32,11 @@ namespace cis237assignment3
 
         public override string ToString()
         {
-            return base.ToString();
+            string description = "";
+            if(_numberOfLanguages > 0)
+                description = " Extra features: Number Of Lanuges: " + _numberOfLanguages + ", ";
+
+            return base.ToString() + description;
         }
 
         public override void CalculateTotalCost()
@@ -40,7 +44,7 @@ namespace cis237assignment3
             base.CalculateTotalCost();
             this._totalCost = base.TotalCost;
 
-            _totalCost += LanguagesCost;
+            this.TotalCost += LanguagesCost;
         }
     }
 }

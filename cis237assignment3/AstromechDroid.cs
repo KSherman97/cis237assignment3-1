@@ -37,7 +37,15 @@ namespace cis237assignment3
 
         public override string ToString()
         {
-            return base.ToString();
+            string description = "";
+
+            if(_hasFireExtinguisher)
+                description += "Fire Extinguisher, ";
+
+            if(_numberOfShips > 0)
+                description += " Number of Ships: " + _numberOfShips + ", ";
+
+            return base.ToString() + description;
         }
 
         public override void CalculateTotalCost()
@@ -46,9 +54,11 @@ namespace cis237assignment3
             this._totalCost = base.TotalCost;
 
             if (_hasFireExtinguisher)
-                this.TotalCost += 100;
+            {
+                this._totalCost += 100;
+            }
 
-            TotalCost += CostOfShips;
+            this.TotalCost += CostOfShips;
         }
 
     }

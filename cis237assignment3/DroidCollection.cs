@@ -55,28 +55,28 @@ namespace cis237assignment3
                     if (droid is ProtocolDroid)
                     {
                         // add the results of the ToString overrides to the alloutput string
-                        allOutPut += ((ProtocolDroid)droid).ToString() + " " +
+                        allOutPut += ((ProtocolDroid)droid).ToString() + "Cost: " +
                             ((ProtocolDroid)droid).TotalCost.ToString("c") + Environment.NewLine;
                     }
                     // is the droid of type Utility?
                     else if (droid is UtilityDroid)
                     {
                         // add the results of the ToString overrides to the alloutput string
-                        allOutPut += ((UtilityDroid)droid).ToString() + " " +
+                        allOutPut += ((UtilityDroid)droid).ToString() + "Cost: " +
                             ((UtilityDroid)droid).TotalCost.ToString("c") + Environment.NewLine;
                     }
                     // is the droid of type Janitor?
                     else if (droid is JanitorDroid)
                     {
                         // add the results of the ToString overrides to the alloutput string
-                        allOutPut += ((JanitorDroid)droid).ToString() + " " +
+                        allOutPut += ((JanitorDroid)droid).ToString() + "Cost: " +
                             ((JanitorDroid)droid).TotalCost.ToString("c") + Environment.NewLine;
                     }
                     // is the droid of type Astromech?
                     else if (droid is AstromechDroid)
                     {
                         // add the results of the ToString overrides to the alloutput string
-                        allOutPut += ((AstromechDroid)droid).ToString() + " " +
+                        allOutPut += ((AstromechDroid)droid).ToString() + "Cost: " +
                             ((AstromechDroid)droid).TotalCost.ToString("c") + Environment.NewLine;
                     }
                 }

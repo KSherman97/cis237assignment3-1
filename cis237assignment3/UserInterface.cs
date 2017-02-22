@@ -227,7 +227,7 @@ namespace cis237assignment3
             // initialize the required bools
             bool toolbox = false;
             bool computerConnection = false;
-            bool arm = true;
+            bool arm = false;
 
             // prompt the user for toolbox
             Console.Clear();
@@ -238,18 +238,20 @@ namespace cis237assignment3
                 toolbox = true;
 
             // prompt the user for computer connection
-            Console.WriteLine(Environment.NewLine + "Computer connection feature: $850");
+            Console.WriteLine(Environment.NewLine + "Computer connection feature: $500");
             Console.WriteLine("Would you like a Computer Connection? 1 = yes; 2 = no");
             int computerConnectionInt = Int32.Parse(Console.ReadLine());
             if (computerConnectionInt == 1)
                 computerConnection = true;
 
             // prompt the user for an arm
-            Console.WriteLine(Environment.NewLine + "Arm feature: $600");
+            Console.WriteLine(Environment.NewLine + "Arm feature: $250");
             Console.WriteLine("Would you like an arm? 1 = yes; 2 = no");
             int armInt = Int32.Parse(Console.ReadLine());
             if (armInt == 1)
+            {
                 arm = true;
+            }
 
             // call the addDroid method in the droid collection class
             // pass parameters for utility droid
@@ -262,7 +264,7 @@ namespace cis237assignment3
             // initialize the required bools
             bool toolbox = false;
             bool computerConnection = false;
-            bool arm = true;
+            bool arm = false;
             bool trashCompactor = false;
             bool vacuum = false;
 
@@ -275,14 +277,14 @@ namespace cis237assignment3
                 toolbox = true;
 
             // prompt the user for computer connection
-            Console.WriteLine(Environment.NewLine + "Computer connection feature: $850");
+            Console.WriteLine(Environment.NewLine + "Computer connection feature: $500");
             Console.WriteLine("Would you like a Computer Connection? 1 = yes; 2 = no");
             int computerConnectionInt = Int32.Parse(Console.ReadLine());
             if (computerConnectionInt == 1)
                 computerConnection = true;
 
             // prompt the user for an arm
-            Console.WriteLine(Environment.NewLine + "Arm feature: $600");
+            Console.WriteLine(Environment.NewLine + "Arm feature: $250");
             Console.WriteLine("Would you like an arm? 1 = yes; 2 = no");
             int armInt = Int32.Parse(Console.ReadLine());
             if (armInt == 1)
@@ -296,7 +298,7 @@ namespace cis237assignment3
                 trashCompactor = true;
 
             // prompt the user for vacuum feature
-            Console.WriteLine(Environment.NewLine + "vacuum feature: $300");
+            Console.WriteLine(Environment.NewLine + "vacuum feature: $100");
             Console.WriteLine("Would you like an trash Compactor? 1 = yes; 2 = no");
             int vacuumInt = Int32.Parse(Console.ReadLine());
             if (vacuumInt == 1)
@@ -313,7 +315,7 @@ namespace cis237assignment3
             // initialize the required bools
             bool toolbox = false;
             bool computerConnection = false;
-            bool arm = true;
+            bool arm = false;
             bool fireExtinguisher = false;
 
             // prompt the user for toolbox feature
@@ -325,28 +327,28 @@ namespace cis237assignment3
                 toolbox = true;
 
             // prompt the user for computer connection feature
-            Console.WriteLine(Environment.NewLine + "Computer connection feature: $850");
+            Console.WriteLine(Environment.NewLine + "Computer connection feature: $500");
             Console.WriteLine("Would you like a Computer Connection? 1 = yes; 2 = no");
             int computerConnectionInt = Int32.Parse(Console.ReadLine());
             if (computerConnectionInt == 1)
                 computerConnection = true;
 
             // prompt the user for arm feature
-            Console.WriteLine(Environment.NewLine + "Arm feature: $600");
+            Console.WriteLine(Environment.NewLine + "Arm feature: $250");
             Console.WriteLine("Would you like an arm? 1 = yes; 2 = no");
             int armInt = Int32.Parse(Console.ReadLine());
             if (armInt == 1)
                 arm = true;
 
             // prompt the user for fire extinguisher feature
-            Console.WriteLine(Environment.NewLine + "fire extinguisher feature: $200");
+            Console.WriteLine(Environment.NewLine + "fire extinguisher feature: $100");
             Console.WriteLine("Would you like a fire extinguisher? 1 = yes; 2 = no");
             int fireExtinguisherInt = Int32.Parse(Console.ReadLine());
             if (fireExtinguisherInt == 1)
                 fireExtinguisher = true;
 
             // prompt the user for ships feature
-            Console.WriteLine(Environment.NewLine + "Ships feature: $300 per ship");
+            Console.WriteLine(Environment.NewLine + "Ships feature: $1,000 per ship");
             Console.WriteLine("How many ships would you like? ");
             int numberOfShips = Int32.Parse(Console.ReadLine());
 

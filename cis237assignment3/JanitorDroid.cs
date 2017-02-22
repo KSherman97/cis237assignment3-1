@@ -29,7 +29,15 @@ namespace cis237assignment3
 
         public override string ToString()
         {
-            return base.ToString();
+            string description = "";
+
+            if (_hasTrashCompactor)
+                description += "Trash Compactor, ";
+
+            if (_hasVacuum)
+                description += "Vacuum, ";
+
+            return base.ToString() + description;
         }
 
         public override void CalculateTotalCost()
@@ -38,10 +46,10 @@ namespace cis237assignment3
             this._totalCost = base.TotalCost;
 
             if (_hasTrashCompactor)
-                this.TotalCost += 500;
+                this._totalCost += 500;
 
             if (_hasVacuum)
-                this.TotalCost += 100;
+                this._totalCost += 100;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace cis237assignment3
             _materialString = materialString;
             _colorString = colorString;
 
-            CalculateTotalCost();
+            //CalculateTotalCost();
         }
 
         public string ModelString
@@ -46,38 +46,36 @@ namespace cis237assignment3
         }
 
         public decimal TotalCost {
-            get { return _baseCost; }
-            set { _baseCost = value; } 
+            get { return _totalCost; }
+            set { _totalCost = value; } 
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            return "Model: " + ModelString + " Color: " + ColorString + " Material: " + MaterialString;
         }
 
-        public virtual decimal CalculateBaseCost()
+        public virtual void CalculateBaseCost()
         {
-            _baseCost = 0;
             _baseCost += CalculateModelCost();
             _baseCost += CalculateMaterialCost();
             _baseCost += CalculateColorCost();
-            return _baseCost;
         }
 
         private decimal CalculateModelCost()
         {
-            int modelCost = 0;
+            decimal modelCost = 0;
 
             if (ModelString == "Protocol")
                 modelCost = 100;
 
-            if (ModelString == "Utility")
+            else if (ModelString == "Utility")
                 modelCost = 250;
 
-            if (ModelString == "Astromech")
+            else if (ModelString == "Astromech")
                 modelCost = 500;
 
-            if (ModelString == "Janitor")
+            else if (ModelString == "Janitor")
                 modelCost = 500;
 
             return modelCost;
@@ -85,15 +83,15 @@ namespace cis237assignment3
         
         private decimal CalculateMaterialCost()
         {
-            int materialCost = 0;
+            decimal materialCost = 0;
 
             if (MaterialString == "Cerillium")
                 materialCost = 200;
 
-            if (MaterialString == "Polyfibe")
+            else if (MaterialString == "Polyfibe")
                 materialCost = 250;
 
-            if (MaterialString == "Tekonite")
+            else if (MaterialString == "Tekonite")
                 materialCost = 500;
 
             return materialCost;
@@ -101,15 +99,15 @@ namespace cis237assignment3
 
         private decimal CalculateColorCost()
         {
-            int colorCost = 0;
+            decimal colorCost = 0;
 
             if (ColorString == "Red")
                 colorCost = 200;
 
-            if (ColorString == "Orange")
+            else if (ColorString == "Orange")
                 colorCost = 200;
 
-            if (ColorString == "Gold")
+            else if (ColorString == "Gold")
                 colorCost = 1000;
 
             return colorCost;
@@ -118,7 +116,8 @@ namespace cis237assignment3
 
         public virtual void CalculateTotalCost()
         {
-            _totalCost = CalculateBaseCost();
+            CalculateBaseCost();
+            this._totalCost = _baseCost;
         }
     }
 }
