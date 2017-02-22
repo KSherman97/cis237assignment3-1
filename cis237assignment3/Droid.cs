@@ -1,4 +1,10 @@
-﻿using System;
+﻿/**
+ * Kyle sherman
+ * Assignment 3
+ * DUE 2/22/2017
+**/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +14,9 @@ namespace cis237assignment3
 {
     abstract class Droid : IDroid
     {
+        //*****************************************
+        //*             Backing fields            *
+        //*****************************************
         protected string _materialString;
         protected string _modelString;
         protected string _colorString;
@@ -18,6 +27,9 @@ namespace cis237assignment3
         protected decimal _baseCost;
         private decimal _totalCost;
 
+        //*****************************************
+        //*             Constructor               *
+        //*****************************************
         public Droid(string modelString, string materialString, string colorString)
         {
             _modelString = modelString;
@@ -27,6 +39,9 @@ namespace cis237assignment3
             //CalculateTotalCost();
         }
 
+        //*****************************************
+        //*             Properties                *
+        //*****************************************
         public string ModelString
         {
             get { return _modelString; }
@@ -50,7 +65,10 @@ namespace cis237assignment3
             set { _totalCost = value; } 
         }
 
-        public override string ToString()
+        //*****************************************
+        //*             Methods                   *
+        //*****************************************
+        public override string ToString() // tostring override
         {
             return "Model: " + ModelString + " Color: " + ColorString + " Material: " + MaterialString;
         }
@@ -62,7 +80,7 @@ namespace cis237assignment3
             _baseCost += CalculateColorCost();
         }
 
-        private decimal CalculateModelCost()
+        private decimal CalculateModelCost() // calculates the base cost from materials
         {
             decimal modelCost = 0;
 
@@ -80,8 +98,8 @@ namespace cis237assignment3
 
             return modelCost;
         }
-        
-        private decimal CalculateMaterialCost()
+
+        private decimal CalculateMaterialCost() // calculates the base cost from models
         {
             decimal materialCost = 0;
 
@@ -97,7 +115,7 @@ namespace cis237assignment3
             return materialCost;
         }
 
-        private decimal CalculateColorCost()
+        private decimal CalculateColorCost() // calculates the base cost from olors
         {
             decimal colorCost = 0;
 
@@ -114,6 +132,7 @@ namespace cis237assignment3
 
         }
 
+        // calculate the total cost
         public virtual void CalculateTotalCost()
         {
             CalculateBaseCost();

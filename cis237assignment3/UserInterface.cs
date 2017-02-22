@@ -1,4 +1,10 @@
-﻿using System;
+﻿/**
+ * Kyle sherman
+ * Assignment 3
+ * DUE 2/22/2017
+**/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +14,10 @@ namespace cis237assignment3
 {
     class UserInterface
     {
-
+        // instantiates the droid collection class
         private DroidCollection droidCollection = new DroidCollection();
 
+        // used for testing
         public override string ToString()
         {
             return "Welcome to the EMPIRE DROID EMPORIUM";
@@ -21,14 +28,18 @@ namespace cis237assignment3
         //    return "";
         //}
 
+        // gets the user input and returns it as an integer
         private  int GetUserOption() 
         {
-            PrintMainMenu();
+            PrintMainMenu(); // calls the print main menu method
 
-            string userOptionString = Console.ReadLine();
+            string userOptionString = Console.ReadLine(); // stores the user input as a string
 
+            // checks to see if the input is within the defined constraints
             while(userOptionString != "1" && userOptionString != "2" && userOptionString != "3")
             {
+                // if it is not within the constraints then 
+                // let the user no and promt them for input again
                 Console.Clear();
                 Console.WriteLine("That is not a valid option.");
                 Console.WriteLine("Press any key to continue");
@@ -38,7 +49,8 @@ namespace cis237assignment3
                 PrintMainMenu();
                 userOptionString = Console.ReadLine();
             }
-
+            // try catch throws any errors if incorrect input is 
+            // entered by the user; user must enter an integer
             try
             {
                 return Int32.Parse(userOptionString);
@@ -52,6 +64,8 @@ namespace cis237assignment3
             }
         }
 
+        // print main menu method
+        // displays the main menu
         private  void PrintMainMenu()
         {
             Console.WriteLine("EMPIRE DROID EMPORIUM");
@@ -61,15 +75,17 @@ namespace cis237assignment3
             Console.Write(Environment.NewLine + "What would you like to do? ");
         }
 
+        // main menu method
+        // logic for what to do based on user input
         public void MainMenu()
         {
             Console.Clear();
 
             int userChoice = GetUserOption();
 
-            while(userChoice != 3)
+            while (userChoice != 3) // check to see if the user has entered the exit code
             {
-                if(userChoice == 1)
+                if(userChoice == 1) // checks to see if the user entered a 1: add a new droid
                 {
                     Console.Clear();
                     modelOptions(); // call the modelOptions method
@@ -102,7 +118,7 @@ namespace cis237assignment3
                         addAstromech(setModel(model), setMaterial(material), setColor(color), droidCollection);
                     }
                 }
-                if (userChoice == 2)
+                if (userChoice == 2) // checks to see if the user entered a 2: view all droids
                 {
                     Console.Clear();
                     outputDroidArray(); // call the output droid array method
@@ -115,6 +131,7 @@ namespace cis237assignment3
             }
         }
 
+        // this method will show the different options for model types
         public  void modelOptions()
         {
             Console.Clear();
@@ -125,6 +142,7 @@ namespace cis237assignment3
             Console.WriteLine("4) astromech - $500");
         }
 
+        // this method will show the different options for material types
         public  void materialOptions()
         {
             Console.Clear();
@@ -134,6 +152,7 @@ namespace cis237assignment3
             Console.WriteLine("3) Tekonite  - $500");
         }
 
+        // this method will show the different options for colors
         public void colorOptions()
         {
             Console.Clear();

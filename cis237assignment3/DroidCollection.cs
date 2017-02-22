@@ -1,4 +1,10 @@
-﻿using System;
+﻿/**
+ * Kyle sherman
+ * Assignment 3
+ * DUE 2/22/2017
+**/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,30 +14,34 @@ namespace cis237assignment3
 {
     class DroidCollection
     {
-        IDroid[] droidArray = new Droid[100];
+        IDroid[] droidArray = new Droid[100]; // creates a new idroid array of the class droid
 
-        int index = 0;
+        int index = 0; // creates a new index variable
 
-        public DroidCollection() { index = 0; }
+        public DroidCollection() { index = 0; } // blank constructor that ensures the index is set to zero
 
+        // addDroid method 1 - used to add protocol droid to the array
         public void addDroid(string materialString, string modelString, string colorString, int numberOfLanguages)
         {
             droidArray[index] = new ProtocolDroid(materialString, modelString, colorString, numberOfLanguages);
             index++;
         }
 
+        // addDroid method 2 - used to add utility droid to the array
         public void addDroid(string materialString, string modelString, string colorString, bool hasToolbox, bool hasComputerConnection, bool hasArm)
         {
             droidArray[index] = new UtilityDroid(materialString, modelString, colorString, hasToolbox, hasComputerConnection, hasArm);
             index++;
         }
 
+        // addDroid method 3 - used to add Janitor droid to the array
         public void addDroid(string materialString, string modelString, string colorString, bool hasToolbox, bool hasComputerConnection, bool hasArm, bool hasTrashCompactor, bool hasVacuum)
         {
             droidArray[index] = new JanitorDroid(materialString, modelString, colorString, hasToolbox, hasComputerConnection, hasArm, hasTrashCompactor, hasVacuum);
             index++;
         }
 
+        // addDroid method 4 - used to add Astromech droid to the array
         public void addDroid(string materialString, string modelString, string colorString, bool hasToolbox, bool hasComputerConnection, bool hasArm, bool hasFireExtinguisher, int numberOfShips)
         {
             droidArray[index] = new AstromechDroid(materialString, modelString, colorString, hasToolbox, hasComputerConnection, hasArm, hasFireExtinguisher, numberOfShips);
