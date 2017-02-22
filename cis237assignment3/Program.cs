@@ -10,6 +10,8 @@ namespace cis237assignment3
     {
         static void Main(string[] args)
         {
+            UserInterface userInterface = new UserInterface();
+            userInterface.MainMenu();
         }
     }
 }
